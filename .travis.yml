@@ -4,6 +4,7 @@ services:
 
 before_install:
   - docker build -t vishal981/docker-react -f Dockerfile.dev .
+  - echo "test"
 
 script:
   - docker run -e CI=true vishal981/docker-react npm run test
@@ -20,4 +21,6 @@ deploy:
    access_key_id:
      secure: $AWS_ACESS_KEY
    secret_access_key:
-     secure: "$AWS_SECRET_KEY" 
+     secure: "$AWS_SECRET_KEY"
+     
+
